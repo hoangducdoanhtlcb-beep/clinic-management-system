@@ -14,7 +14,7 @@ Hệ thống quản lý phòng khám của Nhóm 02, xây dựng bằng **HTML/C
 | Kế toán | Dịch vụ, hóa đơn/thanh toán, tra cứu tài chính, thống kê doanh thu |
 | Bệnh nhân | Hồ sơ cá nhân, lịch cá nhân, chatbot quy trình, xem hướng dẫn sau khám đã được duyệt |
 
-## 2. Ba chức năng AI của KT3
+## 2. Ba chức năng AI 
 
 ### 2.1 AI tóm tắt hồ sơ khám
 `POST /api/ai/summary/{patient_id}` — chỉ Bác sĩ sử dụng. Backend kiểm tra Bác sĩ hiện tại, chỉ lấy `medical_records` thuộc lịch của chính Bác sĩ đó và chỉ gửi các trường cần thiết: thời gian khám, triệu chứng, kết luận, đơn thuốc và ghi chú bác sĩ. Không gửi họ tên, điện thoại, địa chỉ, ngày sinh hay `user_id` tới model.
@@ -164,7 +164,7 @@ AI_MAX_OUTPUT_TOKENS=2048
 
 Nếu model trong tài khoản Gemini của bạn thay đổi/không còn khả dụng, cập nhật `AI_MODEL` theo model mà API key hiện tại được cấp quyền rồi khởi động lại Backend.
 
-## 10. Kiểm thử KT3
+## 10. Kiểm thử 
 
 Trong `clinic_ai_demo_backend` có thể chạy:
 
@@ -176,14 +176,14 @@ Script kiểm tra cấu trúc prompt/cấu hình và chạy toàn bộ unit test
 
 Kiểm thử end-to-end phụ thuộc API key/quota/provider tại thời điểm chạy. Các kết quả thực tế đã quan sát và các trường hợp còn cần chụp minh chứng được ghi trung thực trong `docs/AI_TEST_CASES_KT3.md`.
 
-## 11. Tài liệu minh chứng chấm KT3
+## 11. Tài liệu minh chứng 
 
 - `docs/PROMPT_EXPERIMENTS_KT3.md` — 3 vòng prompt và kết quả/điều chỉnh.
 - `docs/AI_TEST_CASES_KT3.md` — đúng/sai/biên, unit test và E2E.
 - `docs/AI_SDLC_EVIDENCE_KT3.md` — AI review/refactor/bảo mật và lỗi thực tế.
 - `docs/REPORT_ALIGNMENT.md` — đối chiếu source với phạm vi báo cáo.
 
-### Đối chiếu 10 tiêu chí KT3
+### Đối chiếu 10 tiêu chí 
 
 | Tiêu chí | Minh chứng trong project |
 |---|---|

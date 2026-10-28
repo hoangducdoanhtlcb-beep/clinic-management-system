@@ -3,8 +3,8 @@ setlocal
 title Clinic AI KT3 - Make Portable ZIP
 
 set "ROOT=%~dp0"
-set "OUT=%ROOT%clinic_ai_demo_KT3.zip"
-set "STAGE=%TEMP%\clinic_ai_demo_KT3_pack_%RANDOM%"
+set "OUT=%ROOT%clinic_ai_demo.zip"
+set "STAGE=%TEMP%\clinic_ai_demo_pack_%RANDOM%"
 
 echo ==========================================
 echo   Clinic AI KT3 - Create submission ZIP
@@ -21,7 +21,7 @@ echo [1/3] Copying project files...
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
  "$src=[IO.Path]::GetFullPath('%ROOT%'); $dst=[IO.Path]::GetFullPath('%STAGE%');" ^
  "$excludeDirs=@('.venv','__pycache__','.pytest_cache','.git','node_modules');" ^
- "$excludeFiles=@('.env','clinic_ai_demo_KT3.zip');" ^
+ "$excludeFiles=@('.env','clinic_ai_demo.zip');" ^
  "Get-ChildItem -LiteralPath $src -Force | Where-Object { $excludeDirs -notcontains $_.Name -and $excludeFiles -notcontains $_.Name } | ForEach-Object {" ^
  "  if ($_.PSIsContainer) {" ^
  "    Copy-Item -LiteralPath $_.FullName -Destination $dst -Recurse -Force;" ^
@@ -40,7 +40,7 @@ if errorlevel 1 (
     goto :cleanup_error
 )
 
-echo [3/3] Creating clinic_ai_demo_KT3.zip...
+echo [3/3] Creating clinic_ai_demo.zip...
 if exist "%OUT%" del /f /q "%OUT%"
 powershell -NoProfile -ExecutionPolicy Bypass -Command "Compress-Archive -Path '%STAGE%\*' -DestinationPath '%OUT%' -Force"
 if errorlevel 1 goto :error

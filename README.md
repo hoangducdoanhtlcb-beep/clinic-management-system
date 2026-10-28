@@ -1,4 +1,4 @@
-# PHÒNG KHÁM ICTU — KT3 TÍCH HỢP AI
+# HỆ THỐNG QUẢN LÝ PHÒNG KHÁM CÓ TÍCH HỢP AI
 
 Hệ thống quản lý phòng khám của Nhóm 02, xây dựng bằng **HTML/CSS/JavaScript + FastAPI + SQLAlchemy + PostgreSQL/Docker**, tích hợp AI thật qua **Gemini API** (hoặc endpoint OpenAI-compatible). Bản này kế thừa nghiệp vụ KT2 và hoàn thiện phần KT3: AI nằm trong đúng luồng nghiệp vụ, có RBAC, giảm dữ liệu nhạy cảm, prompt tách khỏi code, kiểm soát đầu ra, log, xử lý lỗi và test.
 

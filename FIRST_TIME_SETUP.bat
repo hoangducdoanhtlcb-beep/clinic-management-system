@@ -3,12 +3,12 @@ setlocal EnableExtensions
 cd /d "%~dp0"
 
 echo ==========================================================
-echo  CLINIC AI KT3 - FIRST TIME SETUP
+echo  FIRST TIME SETUP
 echo ==========================================================
 echo.
 
-if not exist "clinic_ai_demo_backend\requirements.txt" (
-  echo [ERROR] Khong tim thay clinic_ai_demo_backend\requirements.txt
+if not exist "backend\requirements.txt" (
+  echo [ERROR] Khong tim thay backend\requirements.txt
   echo Dat file BAT nay o thu muc goc cua project.
   pause
   exit /b 1
@@ -40,14 +40,14 @@ if not defined PY_CMD (
 )
 
 echo [1/8] Tao Python virtual environment...
-if not exist "clinic_ai_demo_backend\.venv\Scripts\python.exe" (
-  pushd "clinic_ai_demo_backend"
+if not exist "backend\.venv\Scripts\python.exe" (
+  pushd "backend"
   %PY_CMD% -m venv .venv || goto :failed_pop
   popd
 ) else echo       Da co .venv - giu nguyen.
 
 echo [2/8] Cai thu vien Python...
-pushd "clinic_ai_demo_backend"
+pushd "backend"
 ".venv\Scripts\python.exe" -m pip install --upgrade pip || goto :failed_pop
 ".venv\Scripts\python.exe" -m pip install -r requirements.txt || goto :failed_pop
 
